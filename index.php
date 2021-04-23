@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Video Game Blog</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1.1">
 </head>
 <body>
 	<!-- header -->
@@ -89,6 +89,26 @@
 
 		<div id="main">
 			<h1>Last entries</h1>
+
+			<article class="entry">
+				<a href="">
+				<h2>Entry's title</h2>
+
+				<p>
+					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
+				</p>
+				</a>
+			</article>
+
+			<article class="entry">
+				<a href="">
+				<h2>Entry's title</h2>
+
+				<p>
+					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
+				</p>
+				</a>
+			</article>
 
 			<article class="entry">
 				<a href="">
