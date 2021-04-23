@@ -63,7 +63,7 @@
 						<input type="submit" name="signin-submit" value="Sign in">
 					</form>
 				</div>
-				<br>
+				<br />
 				<div id="signup" class="block-aside">
 					<h3>Sign up</h3>
 					<form action="signup.php" method="POST">
