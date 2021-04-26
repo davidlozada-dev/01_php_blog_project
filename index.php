@@ -2,7 +2,7 @@
 <?php require_once "includes/header.php";?>
 
 <!-- sidebar -->
-<?php require_once "includes/sidebar.php"?>
+<?php require_once "includes/sidebar.php";?>
 
 	<!-- main container -->
 	<div id="main">

@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 // collect data from the sign up form
 if(isset($_POST["signup-submit"])){
 	$name = isset($_POST["signup-name"]) ? $_POST["signup-name"] : false;
@@ -30,7 +32,6 @@ if (!empty($surname) && !is_numeric($surname) && !preg_match("/[0-9]/", $surname
 // 3rd validate the email input
 if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	$validated_email = true;
-	echo "valid email ";
 }else{
 	$validated_email = false;
 	$error["email"] = "Invalid email";
@@ -39,7 +40,6 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // 4th validate the password input 
 if (!empty($password) && ($password_length = strlen($password) >= 8 ) ) {
 	$validated_password = true;
-	echo "valid password ";
 }else{
 	$validated_password = false;
 	$error["password"] ="Invalid password";
@@ -52,6 +52,7 @@ $signup_status = null;
 if(count($error) == 0){
 	$signup_status = true;
 }else{
-	$signup_status = false;
+	$_SESSION["error"] = $error;
+	header("location: index.php");
 }
 ?>
