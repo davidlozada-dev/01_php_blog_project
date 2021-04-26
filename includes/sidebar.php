@@ -35,6 +35,6 @@
 
 			<input type="submit" name="signup-submit" value="Sign up">
 		</form>
-		<?php delete_error() ?>
+		<?php delete_error(); ?>
 	</div>
 </aside>

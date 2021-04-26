@@ -1,8 +1,17 @@
 <?php 
-session_start();
 
-// collect data from the sign up form
+//check if  superglobal POST is set
 if(isset($_POST["signup-submit"])){
+
+//bring the db_connection file
+	require_once "includes/db_connection.php";
+
+//start the session
+	session_start();
+
+
+
+//collect data from the sign up form	
 	$name = isset($_POST["signup-name"]) ? $_POST["signup-name"] : false;
 	$surname = isset($_POST["signup-surname"]) ? $_POST["signup-surname"] : false;
 	$email = isset($_POST["signup-email"]) ? $_POST["signup-email"] : false;
@@ -13,7 +22,7 @@ if(isset($_POST["signup-submit"])){
 $error = array();
 
 //validate data from the sign up form
-// 1st validate the name input
+	//	1st validate the name input
 if (!empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name)) {
 	$validated_name = true;
 }else{
@@ -21,7 +30,7 @@ if (!empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name)) {
 	$error["name"] = "Invalid name";
 }
 
-// 2nd validate the surname inpur
+	//	2nd validate the surname inpur
 if (!empty($surname) && !is_numeric($surname) && !preg_match("/[0-9]/", $surname)) {
 	$validated_surname = true;
 }else{
@@ -29,7 +38,7 @@ if (!empty($surname) && !is_numeric($surname) && !preg_match("/[0-9]/", $surname
 	$error["surname"] = "Invalid surname";
 }
 
-// 3rd validate the email input
+	//	3rd validate the email input
 if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	$validated_email = true;
 }else{
@@ -37,7 +46,7 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	$error["email"] = "Invalid email";
 }
  
-// 4th validate the password input 
+	//	4th validate the password input 
 if (!empty($password) && ($password_length = strlen($password) >= 8 ) ) {
 	$validated_password = true;
 }else{
@@ -48,9 +57,25 @@ if (!empty($password) && ($password_length = strlen($password) >= 8 ) ) {
 //create a variable to store the actual user's sign up status
 $signup_status = null;
 
-// store validated data from the sign up form in the database
+//store validated data from the sign up form in the database
 if(count($error) == 0){
 	$signup_status = true;
+
+//encrypt password
+	$secure_password = password_hash($password, PASSWORD_BCRYPT, ["cost" => 4]);
+
+//create sql sentence to insert the new user's data into the database
+	$sql = "INSERT INTO users VALUES(null, '$name', '$surname', '$email', '$secure_password', CURDATE())";
+
+//execute de sql sentence to insert the new user's data into the database
+	$insert_data = mysqli_query($db, $sql);
+
+	if ($insert_data) {
+		$_SESSION["signup-completed"] = "Great! You have successfully signed up.";
+	}else{
+		$_SESSION["error"]["database"] = "Oops! We couldn't register your user, please try again.";
+	}
+
 }else{
 	$_SESSION["error"] = $error;
 	header("location: index.php");
