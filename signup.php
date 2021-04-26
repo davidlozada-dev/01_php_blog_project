@@ -1,5 +1,4 @@
 <?php 
-
 //check if  superglobal POST is set
 if(isset($_POST["signup-submit"])){
 
@@ -80,4 +79,6 @@ if(count($error) == 0){
 	$_SESSION["error"] = $error;
 	header("location: index.php");
 }
+
+header("location: index.php");
 ?>

@@ -1,6 +1,5 @@
 <?php 
 //create function for throwing errors
-
 function throw_error($error, $key){
 	$alert = " ";
 
@@ -16,7 +15,6 @@ function delete_error(){
 	$_SESSION["error"] = null;
 
 	session_unset();
-
 }
 
 ?>

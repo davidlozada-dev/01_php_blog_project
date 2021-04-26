@@ -16,6 +16,15 @@
 	<br />
 	<div id="signup" class="block-aside">
 		<h3>Sign up</h3>
+		<?php 
+		//show sign up message
+			if(isset($_SESSION["signup-completed"])){
+				echo "<div class='success-alert'>" . $_SESSION["signup-completed"] . "</div>";
+			}else{
+				echo "<div class='error-alert'>" . $_SESSION["error"] ["database"] . "</div>";
+			}
+
+		?>
 		<form action="signup.php" method="POST">
 			<label for="signup-name">Name:</label>
 			<input type="text" name="signup-name" id="signup-name" placeholder="Name">
