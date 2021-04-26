@@ -20,8 +20,8 @@
 		//show sign up message
 			if(isset($_SESSION["signup-completed"])){
 				echo "<div class='success-alert'>" . $_SESSION["signup-completed"] . "</div>";
-			}else{
-				echo "<div class='error-alert'>" . $_SESSION["error"] ["database"] . "</div>";
+			}elseif (isset($_SESSION["error"]["database"])) {
+				echo "<div class='error-alert'>" . $_SESSION["error"]["database"] . "</div>";
 			}
 
 		?>
