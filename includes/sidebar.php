@@ -5,6 +5,8 @@
 	<?php 
 		if (isset($_SESSION["user"])) {
 			echo "<div id='signedin-user' class='block-aside'><h3>". "Welcome " . ucfirst($_SESSION["user"]["name_use"]) . " " . ucfirst($_SESSION["user"]["surname_use"]) . "</h3></div>";
+		}elseif (isset($_SESSION["error"]["signin"])) {
+			echo "<div id='signedin-error' class='block-aside'><h3>". $_SESSION["error"]["signin"] . "</h3></div>";
 		}
 	?>
 
