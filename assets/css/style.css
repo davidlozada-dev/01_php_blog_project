@@ -167,6 +167,7 @@ label, input[type="text"], input[type="email"], input[type="password"]{
 	width: 95%;
 	margin-top: 2px;
 	margin-bottom: 2px;
+
 }
 
 input[type="text"], input[type="email"], input[type="password"]{
@@ -198,4 +199,24 @@ input[type="button"], input[type="submit"]{
 	padding: 5px;
 	height: auto;
 	text-align: center;
+}
+
+.error-alert{
+	padding: 5px;
+	font-size: 14px;
+	color: white;
+	background: crimson;
+	box-shadow: 0px 1px 3px #ccc;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.success-alert{
+	padding: 5px;
+	font-size: 14px;
+	color: white;
+	background: #31d818;
+	box-shadow: 0px 1px 3px #ccc;
+	margin-bottom: 10px;
+	border-radius: 5px;
 }

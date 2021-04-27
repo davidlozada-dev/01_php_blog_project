@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Video Game Blog</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1.1">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1.2">
 </head>
 <body>
 	<!-- header -->

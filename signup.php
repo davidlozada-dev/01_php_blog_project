@@ -6,15 +6,15 @@ if(isset($_POST["signup-submit"])){
 	require_once "includes/db_connection.php";
 
 //start the session
-	session_start();
-
-
-
-//collect data from the sign up form	
-	$name = isset($_POST["signup-name"]) ? $_POST["signup-name"] : false;
-	$surname = isset($_POST["signup-surname"]) ? $_POST["signup-surname"] : false;
-	$email = isset($_POST["signup-email"]) ? $_POST["signup-email"] : false;
-	$password = isset($_POST["signup-password"]) ? $_POST["signup-password"] : false; 
+	if (!isset($_SESSION)) {
+		session_start();	
+	}	
+	
+//collect data from the sign up form
+	$name = isset($_POST["signup-name"]) ? mysqli_real_escape_string($db, $_POST["signup-name"]) : false;
+	$surname = isset($_POST["signup-surname"]) ? mysqli_real_escape_string($db, $_POST["signup-surname"]) : false;
+	$email = isset($_POST["signup-email"]) ? mysqli_real_escape_string($db, $_POST["signup-email"]) : false;
+	$password = isset($_POST["signup-password"]) ? mysqli_real_escape_string($db, $_POST["signup-password"]) : false; 
 }
 
 //create a variable to store the errors
