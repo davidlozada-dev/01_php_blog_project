@@ -2,11 +2,18 @@
 <?php require_once "helper.php"; ?>
 
 <aside id="sidebar">
+	<?php 
+		if (isset($_SESSION["user"])) {
+			echo "<div id='signedin-user' class='block-aside'><h3>". "Welcome " . ucfirst($_SESSION["user"]["name_use"]) . " " . ucfirst($_SESSION["user"]["surname_use"]) . "</h3></div>";
+		}
+	?>
+
 	<div id="signin" class="block-aside">
 		<h3>Sign in</h3>
 		<form action="signin.php" method="POST">
 			<label for="signin-email">Email:</label>
 			<input type="email" name="signin-email" id="signin-email">
+			
 			<label for="signin-password">Password:</label>
 			<input type="password" name="signin-password" id="signin-password">
 
@@ -18,12 +25,11 @@
 		<h3>Sign up</h3>
 		<?php 
 		//show sign up message
-			if(isset($_SESSION["signup-completed"])){
+			if (isset($_SESSION["signup-completed"])){
 				echo "<div class='success-alert'>" . $_SESSION["signup-completed"] . "</div>";
 			}elseif (isset($_SESSION["error"]["database"])) {
 				echo "<div class='error-alert'>" . $_SESSION["error"]["database"] . "</div>";
 			}
-
 		?>
 		<form action="signup.php" method="POST">
 			<label for="signup-name">Name:</label>

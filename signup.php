@@ -1,6 +1,6 @@
 <?php 
 //check if  superglobal POST is set
-if(isset($_POST["signup-submit"])){
+if (isset($_POST["signup-submit"])){
 
 //bring the db_connection file
 	require_once "includes/db_connection.php";
@@ -57,7 +57,7 @@ if (!empty($password) && ($password_length = strlen($password) >= 8 ) ) {
 $signup_status = null;
 
 //store validated data from the sign up form in the database
-if(count($error) == 0){
+if (count($error) == 0){
 	$signup_status = true;
 
 //encrypt password
