@@ -11,10 +11,10 @@ if(isset($_POST["signup-submit"])){
 	}	
 	
 //collect data from the sign up form
-	$name = isset($_POST["signup-name"]) ? mysqli_real_escape_string($db, $_POST["signup-name"]) : false;
-	$surname = isset($_POST["signup-surname"]) ? mysqli_real_escape_string($db, $_POST["signup-surname"]) : false;
-	$email = isset($_POST["signup-email"]) ? mysqli_real_escape_string($db, $_POST["signup-email"]) : false;
-	$password = isset($_POST["signup-password"]) ? mysqli_real_escape_string($db, $_POST["signup-password"]) : false; 
+	$name = isset($_POST["signup-name"]) ? mysqli_real_escape_string($db, trim($_POST["signup-name"])) : false;
+	$surname = isset($_POST["signup-surname"]) ? mysqli_real_escape_string($db, trim($_POST["signup-surname"])) : false;
+	$email = isset($_POST["signup-email"]) ? mysqli_real_escape_string($db, trim($_POST["signup-email"])) : false;
+	$password = isset($_POST["signup-password"]) ? mysqli_real_escape_string($db, trim($_POST["signup-password"])) : false; 
 }
 
 //create a variable to store the errors
