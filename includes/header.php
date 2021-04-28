@@ -1,4 +1,8 @@
-<?php require_once 'db_connection.php'; ?>
+<!-- database connection -->
+<?php require_once "db_connection.php"; ?>
+
+<!-- helper-->
+<?php require_once "includes/helper.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,20 +29,19 @@
 					<li>
 						<a href="index.php">Home</a>
 					</li>
+					
+					<?php 
+					
+					$categories = find_categories();
+
+						while ($category = mysqli_fetch_assoc($categories)){
+
+						echo "<li>" . "<a href='category.php?id'>" . ucwords($category['name_cat']) . "</a>" . "</li>";
+						} 
+					?>
+
 					<li>
-						<a href="index.php">Category 1</a>
-					</li>
-					<li>
-						<a href="index.php">Category 2</a>
-					</li>
-					<li>
-						<a href="index.php">Category 3</a>
-					</li>
-					<li>
-						<a href="index.php">Category 4</a>
-					</li>
-					<li>
-						<a href="index.php">About me</a>
+						<a href="index.php">About Me</a>
 					</li>
 					<li>
 						<a href="index.php">Contact</a>
