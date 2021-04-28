@@ -10,6 +10,7 @@
 		}
 	?>
 
+<?php  if (!isset($_SESSION["user"])):?>
 	<div id="signin" class="block-aside">
 		<h3>Sign in</h3>
 		<form action="signin.php" method="POST">
@@ -54,4 +55,5 @@
 		</form>
 		<?php delete_error(); ?>
 	</div>
+<?php endif; ?>	
 </aside>

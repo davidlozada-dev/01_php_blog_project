@@ -9,7 +9,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Video Game Blog</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1.6">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v1.7">
 </head>
 <body>
 	<!-- header -->

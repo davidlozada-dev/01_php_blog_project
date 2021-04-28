@@ -34,8 +34,16 @@ function find_categories($db){
 	return $result;
 }
 
-function find_last_entries($db){
-	$sql = "SELECT e. *, c. * FROM entries e INNER JOIN categories c WHERE e.ID_cat = c.ID_cat LIMIT 4";
+function find_last_entries(){
+	$server = "localhost";
+$username = "root";
+$password = "";
+$database = "01_php_blog_project";
+
+
+$db = mysqli_connect($server, $username, $password, $database);
+
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c WHERE e.ID_cat = c.ID_cat ORDER BY e.ID_ent DESC LIMIT 4";
 
 	$entries = mysqli_query($db, $sql);
 
