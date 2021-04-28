@@ -4,7 +4,7 @@
 <aside id="sidebar">
 	<?php 
 		if (isset($_SESSION["user"])) {
-			echo "<div id='signedin-user' class='block-aside'><h3>". "Welcome " . ucfirst($_SESSION["user"]["name_use"]) . " " . ucfirst($_SESSION["user"]["surname_use"]) . "</h3></div>";
+			echo "<div id='signedin-user' class='block-aside'><h3>". "Welcome " . ucfirst($_SESSION["user"]["name_use"]) . " " . ucfirst($_SESSION["user"]["surname_use"]) . "</h3>" . "<a href='' id='add-entry'>Add entry</a>". "<a href='' id='add-category'>Add category</a>" . "<a href='' id='edit-profile'>Edit profile</a>". "<a href='signout.php' id='sign-out'>Sign out</a>". "</div>";
 		}elseif (isset($_SESSION["error"]["signin"])) {
 			echo "<div id='signedin-error' class='block-aside'><h3>". $_SESSION["error"]["signin"] . "</h3></div>";
 		}
