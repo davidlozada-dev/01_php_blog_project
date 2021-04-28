@@ -284,3 +284,9 @@ input[type="button"], input[type="submit"]{
 	text-align: center;
 	padding-top: 20px;
 }
+
+.category-date{
+	color: #808080;
+	margin-top: 5px;
+	font-size: 15px;
+}

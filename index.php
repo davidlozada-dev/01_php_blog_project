@@ -16,7 +16,7 @@
 							while ($entry = mysqli_fetch_assoc($entries)){
 
 							echo  "<article class='entry'>" 
-								. "<h2>" . $entry['title_ent'] . "</h2>"
+								. "<h2>" . ucwords($entry['title_ent']) . "</h2>"
 								. "<span class='category-date'>"
 								. ucwords($entry['name_cat'])	
 								. " | "
@@ -40,3 +40,4 @@
 
 <!-- footer -->
 <?php require_once "includes/footer.php"?>
+
