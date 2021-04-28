@@ -32,12 +32,15 @@
 					
 					<?php 
 					
-					$categories = find_categories();
+					$categories = find_categories($db);
 
-						while ($category = mysqli_fetch_assoc($categories)){
+						if (!empty($categories)) {
+							while ($category = mysqli_fetch_assoc($categories)){
 
-						echo "<li>" . "<a href='category.php?id'>" . ucwords($category['name_cat']) . "</a>" . "</li>";
-						} 
+							echo "<li>" . "<a href='category.php?id=". $category['ID_cat'] ."'>" . ucwords($category['name_cat']) . "</a>" . "</li>";
+							} 
+						}
+						
 					?>
 
 					<li>

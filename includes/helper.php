@@ -1,7 +1,4 @@
 <?php 
-//database connection
-require_once "db_connection.php";
-
 //create function for throwing errors
 function throw_error($error, $key){
 	$alert = " ";
@@ -21,14 +18,8 @@ function delete_error(){
 }
 
 //create function for selecting the existing categories from the database
-function find_categories(){
-	$server = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "01_php_blog_project";
+function find_categories($db){
 
-
-	$db = mysqli_connect($server, $username, $password, $database);
 
 	$sql = "SELECT * FROM categories ORDER BY name_cat ASC";
 
@@ -38,6 +29,20 @@ function find_categories(){
 
 	if ($categories && mysqli_num_rows($categories) >= 1) {
 		$result = $categories;	
+	}
+
+	return $result;
+}
+
+function find_last_entries($db){
+	$sql = "SELECT e. *, c. * FROM entries e INNER JOIN categories c WHERE e.ID_cat = c.ID_cat LIMIT 4";
+
+	$entries = mysqli_query($db, $sql);
+
+	$result = array();
+
+	if ($entries && mysqli_num_rows($entries) >= 1) {
+		$result = $entries;
 	}
 
 	return $result;

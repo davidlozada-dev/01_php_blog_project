@@ -8,55 +8,25 @@
 	<div id="main">
 			<h1>Last entries</h1>
 
-			<article class="entry">
-				<a href="">
-				<h2>Entry's title</h2>
+				<?php 
+					//ADD ENTRIES TO TEST THIS OUT
+					$entries = find_last_entries($db);
 
-				<p>
-					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
-				</p>
-				</a>
-			</article>
+						if (!empty($entries)) {
+							while ($entry = mysqli_fetch_assoc($entries)){
 
-			<article class="entry">
-				<a href="">
-				<h2>Entry's title</h2>
+							echo  "<article class='entry'>" 
+								. "<h2>" . $entry['title_ent'] . "</h2>"
+								. "<p>"
+								. substr($entry['description_ent'], 0, 180) . "..."
+								. "</p>"
+								. "</article>";
+							} 
+						}
+						
+				?>
 
-				<p>
-					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
-				</p>
-				</a>
-			</article>
-
-			<article class="entry">
-				<a href="">
-				<h2>Entry's title</h2>
-
-				<p>
-					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
-				</p>
-				</a>
-			</article>
-
-			<article class="entry">
-				<a href="">
-				<h2>Entry's title</h2>
-
-				<p>
-					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
-				</p>
-				</a>
-			</article>
-
-			<article class="entry">
-				<a href="">
-				<h2>Entry's title</h2>
-
-				<p>
-					Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Fuga, facilis ut deserunt, debitis, enim et inventore odio aliquam placeat aperiam est laborum beatae voluptas amet sequi alias magni, quas eius!
-				</p>
-				</a>
-			</article>
+			
 
 			<div id="see-all">
 				<a href="">See all entries</a>
