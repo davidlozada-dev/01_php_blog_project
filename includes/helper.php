@@ -17,6 +17,10 @@ function delete_error(){
 	session_unset();
 }
 
+function delete_error_without_signing_out(){
+	$_SESSION["error"] = null;
+}
+
 //create function for selecting the existing categories from the database
 function find_categories($db){
 
@@ -36,12 +40,12 @@ function find_categories($db){
 
 function find_last_entries(){
 	$server = "localhost";
-$username = "root";
-$password = "";
-$database = "01_php_blog_project";
+	$username = "root";
+	$password = "";
+	$database = "01_php_blog_project";
 
 
-$db = mysqli_connect($server, $username, $password, $database);
+	$db = mysqli_connect($server, $username, $password, $database);
 
 	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c WHERE e.ID_cat = c.ID_cat ORDER BY e.ID_ent DESC LIMIT 4";
 
