@@ -26,9 +26,9 @@ if (!isset($entry["ID_ent"])){
 		</a>
 
 		<h4><?=date('F j, Y', strtotime(($entry['date_ent'])))?></h4>
-		
+
 		<p>
-			<?= ucwords($entry["description_ent"])?>
+			<?=$entry["description_ent"]?>
 		</p>
 	</div>
 	<!-- end of main container -->
