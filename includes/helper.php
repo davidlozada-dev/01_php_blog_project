@@ -1,5 +1,5 @@
 <?php 
-//create function for throwing errors
+//create a function for throwing errors
 function throw_error($error, $key){
 	$alert = " ";
 
@@ -10,18 +10,24 @@ function throw_error($error, $key){
 	return $alert;
 }
 
-//create function for closing the session 
+//create a function for unsetting the superglobal SESSION and destroying the session
 function delete_error(){
 	$_SESSION["error"] = null;
 
 	session_unset();
 }
 
+//create a function for unsetting the superglobal SESSION without destroying the session
 function delete_error_without_signing_out(){
 	$_SESSION["error"] = null;
 }
 
-//create function for selecting the existing categories from the database
+//create a function for unsetting the superglobal SESSION when updating a profile
+function delete_updating_success_message(){
+	$_SESSION["update-completed"] = null;
+}
+
+//create a function for selecting the existing categories from the database
 function find_categories($db){
 
 
@@ -38,6 +44,7 @@ function find_categories($db){
 	return $result;
 }
 
+//create a function for finding the last entries
 function find_last_entries(){
 	$server = "localhost";
 	$username = "root";
