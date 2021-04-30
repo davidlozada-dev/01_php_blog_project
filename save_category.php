@@ -1,5 +1,5 @@
 <?php 
-if (isset($_POST)) {
+if (isset($_POST)){
 //bring db_connection.php file
 	require_once "includes/db_connection.php";
 
@@ -10,14 +10,14 @@ if (isset($_POST)) {
 $error = array();
 
 //validate name input from the create category form
-if (!empty($category_name) && !is_numeric($category_name) && !preg_match("/[0-9]/", $category_name)) {
+if (!empty($category_name) && !is_numeric($category_name) && !preg_match("/[0-9]/", $category_name)){
 	$validated_name = true;
 }else{
 	$validated_name = false;
 	$error["name"] = "Invalid name";
 }
 
-if (count($error) == 0) {
+if (count($error) == 0){
 	$sql = "INSERT INTO categories VALUES(null, '$category_name')";
 
 	$save_category = mysqli_query($db, $sql);

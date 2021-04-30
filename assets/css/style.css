@@ -107,6 +107,7 @@ body{
 	border-radius: 5px;
 	box-shadow: 0px 0px 5px #ccc;
 	margin-left: 10px;
+	margin-bottom: 15px;
 	overflow: hidden;
 	padding: 15px;
 }
@@ -289,4 +290,10 @@ input[type="button"], input[type="submit"]{
 	color: #808080;
 	margin-top: 5px;
 	font-size: 15px;
+}
+
+#no-entries{
+	color: #808080;
+	margin-top: 10px;
+	font-size: 30px;
 }

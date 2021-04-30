@@ -6,11 +6,11 @@
 
 	<!-- main container -->
 	<div id="main">
-			<h1>Last entries</h1>
+			<h1>All entries</h1>
 
 				<?php 
 
-					$entries = find_last_entries();
+					$entries = find_all_entries();
 
 						if (!empty($entries)){
 							while ($entry = mysqli_fetch_assoc($entries)){
@@ -31,13 +31,9 @@
 							} 
 						}	
 				?>
-
-			<div id="see-all">
-				<a href="all_entries.php">See all entries</a>
-			</div>
 	</div>
 	<!-- end of main container -->
-
+	
 <!-- footer -->
 <?php require_once "includes/footer.php"?>
 

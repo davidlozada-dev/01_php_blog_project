@@ -3,7 +3,7 @@
 function throw_error($error, $key){
 	$alert = " ";
 
-	if (isset($error[$key]) && !empty($key)) {
+	if (isset($error[$key]) && !empty($key)){
 		$alert = "<div class='error-alert'>" . $error[$key] . "</div>";
 	}
 
@@ -37,9 +37,23 @@ function find_categories($db){
 
 	$result = array();
 
-	if ($categories && mysqli_num_rows($categories) >= 1) {
+	if ($categories && mysqli_num_rows($categories) >= 1){
 		$result = $categories;	
 	}
+
+	return $result;
+}
+
+//create a function for selecting the existing categories from the database
+function find_category($db, $id){
+
+	$ID_cat = (int)$id;
+
+	$sql = "SELECT * FROM categories WHERE ID_cat = $ID_cat";
+
+	$category = mysqli_query($db, $sql);
+
+	$result = mysqli_fetch_assoc($category);
 
 	return $result;
 }
@@ -54,18 +68,79 @@ function find_last_entries(){
 
 	$db = mysqli_connect($server, $username, $password, $database);
 
-	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c WHERE e.ID_cat = c.ID_cat ORDER BY e.ID_ent DESC LIMIT 4";
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c ON e.ID_cat = c.ID_cat ORDER BY e.ID_ent DESC LIMIT 4";
 
 	$entries = mysqli_query($db, $sql);
 
 	$result = array();
 
-	if ($entries && mysqli_num_rows($entries) >= 1) {
+	if ($entries && mysqli_num_rows($entries) >= 1){
 		$result = $entries;
 	}
 
 	return $result;
 }
 
+function find_all_entries(){
+	$server = "localhost";
+	$username = "root";
+	$password = "";
+	$database = "01_php_blog_project";
+
+
+	$db = mysqli_connect($server, $username, $password, $database);
+
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c ON e.ID_cat = c.ID_cat ORDER BY e.ID_ent DESC";
+
+	$entries = mysqli_query($db, $sql);
+
+	$result = array();
+
+	if ($entries && mysqli_num_rows($entries) >= 1){
+		$result = $entries;
+	}
+
+	return $result;
+}
+
+function find_category_entries($id){
+	$server = "localhost";
+	$username = "root";
+	$password = "";
+	$database = "01_php_blog_project";
+
+	$ID_cat = (int)$id;
+
+	$db = mysqli_connect($server, $username, $password, $database);
+
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c ON e.ID_cat = c.ID_cat WHERE e.ID_cat = $ID_cat ORDER BY e.ID_ent DESC";
+
+	$entries = mysqli_query($db, $sql);
+
+	$result = array();
+
+	if ($entries && mysqli_num_rows($entries) >= 1){
+		$result = $entries;
+	}
+
+	return $result;
+}
+
+function find_entry($db, $id){
+
+	$ID_ent = (int)$id;
+
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c ON e.ID_cat = c.ID_cat WHERE e.ID_ent = $ID_ent";
+
+	$entry = mysqli_query($db, $sql);
+
+	$result = array();
+
+	if ($entry && mysqli_num_rows($entry) == 1){
+		$result = mysqli_fetch_assoc($entry);
+	}
+
+	return $result;
+}
 ?>
 

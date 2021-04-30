@@ -14,7 +14,7 @@
 	//show update message
 		if (isset($_SESSION["update-completed"])){
 			echo "<div class='success-alert'>" . $_SESSION["update-completed"] . "</div>";
-		}elseif (isset($_SESSION["error"]["database"])) {
+		}elseif (isset($_SESSION["error"]["database"])){
 			echo "<div class='error-alert'>" . $_SESSION["error"]["database"] . "</div>";
 		}
 	?>
