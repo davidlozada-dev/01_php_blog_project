@@ -17,7 +17,7 @@ if (!isset($entry["ID_ent"])){
 
 ?>
 
-<!-- main container -->
+<!-- begin of main container -->
 <div id="main">
 	<h1><?= ucwords($entry["title_ent"])?></h1>
 
@@ -32,7 +32,7 @@ if (!isset($entry["ID_ent"])){
 	</p>
 	
 	<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["ID_use"] == $entry["ID_use"]): ?>
-	<a href="edit_entry.php" id="edit-entry-button">Edit</a>
+	<a href="edit_entry.php?id=<?=$entry["ID_ent"];?>" id="edit-entry-button">Edit</a>
 	<a href="delete_entry.php?id=<?=$entry["ID_ent"];?>" id="delete-entry-button">Delete</a>
 	<?php endif;?>	
 </div>

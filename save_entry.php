@@ -38,14 +38,25 @@ if (!empty($category_name) && !is_numeric($category_name) && !preg_match("/[0-9]
 */
 
 if (count($error) == 0) {
-	$sql = "INSERT INTO entries VALUES(null, $user, $category_name, '$entry_title', '$entry_description', CURDATE())";
+	if (isset($_GET["edit"])){
+		$ID_ent = (int)$_GET["edit"];
+
+		$sql = "UPDATE entries SET title_ent = '$entry_title', description_ent = '$entry_description', ID_cat = $category_name WHERE ID_ent = $ID_ent AND ID_use = $user";
+	}else{
+		$sql = "INSERT INTO entries VALUES(null, $user, $category_name, '$entry_title', '$entry_description', CURDATE())";
+	}
 
 	$save_entry = mysqli_query($db, $sql);
 
 	header("location: index.php");
 }else{
 	$_SESSION["error"] = $error;
-	header("location: create_entry.php");
+
+	if (isset($_GET["edit"])){
+		header("location: edit_entry.php?id=$ID_ent");
+	}else{
+		header("location: create_entry.php");
+	}
 }
 
 
