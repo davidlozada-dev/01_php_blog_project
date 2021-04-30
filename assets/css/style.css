@@ -297,3 +297,53 @@ input[type="button"], input[type="submit"]{
 	margin-top: 10px;
 	font-size: 30px;
 }
+
+#edit-entry-button{
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background: #52e0df;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0px 1px 3px #808080;
+	width: 50px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#edit-entry-button:hover{
+	background: #eb8447;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#delete-entry-button{
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background: #52e0df;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0px 1px 3px #808080;
+	width: 50px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#delete-entry-button:hover{
+	background: #e05252;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+}
