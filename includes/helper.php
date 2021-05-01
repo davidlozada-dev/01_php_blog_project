@@ -81,6 +81,7 @@ function find_last_entries(){
 	return $result;
 }
 
+//create a function for finding all entries
 function find_all_entries(){
 	$server = "localhost";
 	$username = "root";
@@ -103,6 +104,7 @@ function find_all_entries(){
 	return $result;
 }
 
+//create a function for finding entries by category
 function find_category_entries($id){
 	$server = "localhost";
 	$username = "root";
@@ -126,6 +128,7 @@ function find_category_entries($id){
 	return $result;
 }
 
+//create a function for finding an entry
 function find_entry($db, $id){
 
 	$ID_ent = (int)$id;
@@ -139,6 +142,21 @@ function find_entry($db, $id){
 	if ($entry && mysqli_num_rows($entry) == 1){
 		$result = mysqli_fetch_assoc($entry);
 	}
+
+	return $result;
+}
+
+//create a function for finding entries that match the user's search input
+function search_for_entries($db, $pattern){
+
+	$wildcard = (string)$pattern;
+	
+	$sql = "SELECT e. *, c.name_cat FROM entries e INNER JOIN categories c ON e.ID_cat = c.ID_cat WHERE title_ent LIKE '%$wildcard%'";
+
+	$search = mysqli_query($db, $sql);
+
+
+	$result = $search;
 
 	return $result;
 }

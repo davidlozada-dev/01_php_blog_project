@@ -2,6 +2,14 @@
 <?php require_once "helper.php"; ?>
 
 <aside id="sidebar">
+	<div id="searcher" class="block-aside">
+		<h3>Search</h3>
+		<form action="searcher.php" method="POST">
+			<input type="text" name="search" id="search">
+			<input type="submit" name="search-submit" value="Search">
+		</form>
+	</div>
+
 	<?php 
 		if (isset($_SESSION["user"])) {
 			echo "<div id='signedin-user' class='block-aside'><h3>". "Welcome " . ucfirst($_SESSION["user"]["name_use"]) . " " . ucfirst($_SESSION["user"]["surname_use"]) . "</h3>" . "<a href='create_entry.php' id='add-entry'>Add entry</a>". "<a href='create_category.php' id='add-category'>Add category</a>" . "<a href='edit_profile.php' id='edit-profile'>Edit profile</a>". "<a href='signout.php' id='sign-out'>Sign out</a>". "</div>";

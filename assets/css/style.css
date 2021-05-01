@@ -347,3 +347,7 @@ input[type="button"], input[type="submit"]{
 	padding: 5px;
 	border-radius: 5px;
 }
+
+#searcher{
+	margin-bottom: 15px;
+}
