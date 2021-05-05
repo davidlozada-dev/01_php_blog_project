@@ -44,10 +44,10 @@
 					?>
 
 					<li>
-						<a href="index.php">About Me</a>
+						<a href="about_me.php">About Me</a>
 					</li>
 					<li>
-						<a href="index.php">Contact</a>
+						<a href="contact_me.php">Contact Me</a>
 					</li>
 				</ul>
 			</nav>
