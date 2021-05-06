@@ -2,7 +2,7 @@
 
 	<footer id="footer">
 		<p>
-			Developed by David Lozada - Copyleft <?= date("Y") ?>
+			Developed by David Lozada &copy <?= date("Y") ?>
 		</p>
 	</footer>
 	
