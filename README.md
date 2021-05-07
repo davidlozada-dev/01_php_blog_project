@@ -61,11 +61,15 @@ The 1st schema shows the tables that are in the database and how they are relate
 
 ![01 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_01.png)
 
+---
+
 #### Non-related tables
 
 The 2nd schema show the tables thar are not related with each other in the database, these have as main function to backup all the data from the related tables.
 
 ![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+---
 
 ### 1.4 Blog layouts
 
@@ -75,11 +79,15 @@ The __about me__ layout shows information about the site owner.
 
 ![About me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/about_me_layout.png)
 
+---
+
 #### Category
 
 The __category__ layout is used to show all the entries from a particular category.
 
 ![Category](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/category_layout.png)
+
+---
 
 #### Contact me
 
@@ -87,11 +95,15 @@ The __contact me__ layout displays the contact information for the site owner.
 
 ![Contact me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/contact_me_layout.png)
 
+---
+
 #### Create category
 
 The __create category__ layout presents a form to create a category.
 
 ![Create category](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/create_category_layout.png)
+
+---
 
 #### Create entry
 
@@ -100,11 +112,15 @@ The __create entry__ layout presents a form to create an entry.
 
 ![Create entry](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/create_entry_layout.png)
 
+---
+
 #### Edit profile
 
 The __edit profile__ layout shows a form to update the user's profile information.
 
 ![Edit profile](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/edit_profile_layout.png)
+
+---
 
 #### Home page
 
@@ -112,8 +128,105 @@ The __home page__ layouts displays the last 5 entries.
 
 ![Home page](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/home_page_layout.png)
 
+---
+
 #### Signed in
 
 The __signed in__ layout is the first page a user gets once is signed in.
 
 ![Signed In](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/signed_in_layout.png)
+
+---
+
+## Technical aspects
+
+### 2.1 Triggers
+
+#### categories_backup_trigger
+
+The __categories_backup_trigger__  inserts into the _categories_backup table_ all the record's data before being deleted from the _categories table_.
+
+```SQL
+DELIMITER //
+CREATE TRIGGER categories_backup_trigger BEFORE DELETE ON categories FOR EACH ROW 
+BEGIN
+INSERT INTO categories_backup VALUES(OLD.ID_cat, OLD.name_cat);
+END//
+DELIMITER ;
+
+```
+
+---
+
+#### entries_backup_trigger
+
+The __entries_backup_trigger__  inserts into the _entries_backup table_ all the record's data before being deleted from the _entries table_.
+
+```SQL
+DELIMITER //
+CREATE TRIGGER entries_backup_trigger BEFORE DELETE ON entries FOR EACH ROW 
+BEGIN
+INSERT INTO entries_backup VALUES(OLD.ID_ent, OLD.ID_use, OLD.ID_cat, OLD.title_ent, OLD.description_ent, OLD.date_ent);
+END//
+DELIMITER ;
+```
+
+---
+
+#### users_backup_trigger
+
+The __users_backup_trigger__  inserts into the _users_backup table_ all the record's data before being deleted from the _users table_.
+
+```SQL
+DELIMITER //
+CREATE TRIGGER users_backup_trigger BEFORE DELETE ON users FOR EACH ROW 
+BEGIN
+INSERT INTO users_backup VALUES(OLD.ID_use, OLD.name_use, OLD.surname_use, OLD.email_use, OLD.password_use, OLD.date_use);
+END//
+DELIMITER ;
+```
+
+---
+
+### 2.2 Includes
+
+#### db_connection
+
+This file is used to connect to the database.
+
+---
+
+#### footer
+
+This file stores the footer module.
+
+---
+
+#### header
+
+This file stores the header module.
+
+---
+
+#### helper
+
+This file stores a set of functions that are implemented in the code.
+
+---
+
+#### redirect
+
+This file stores a redirection action.
+
+---
+
+#### sidebar
+
+This file stores the modules of search box, sign in and sign up. 
+
+---
+
+## 3 Contributor
+
+Copyright © 2021 __David Lozada__
+
