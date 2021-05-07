@@ -13,7 +13,7 @@ __I'M CURRENTLY WORKING ON THE README.md FILE__
 
 	3.[Database schemas](#13-Database-schemas )
 
-	4.[Blog's layouts](#14-Blog's-layouts)
+	4.[Blog layouts](#14-Blog-layouts)
 
 1. [Technical aspects](#2-Technical-aspects)
 
@@ -67,3 +67,36 @@ The 2nd schema show the tables thar are not related with each other in the datab
 
 ![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
 
+### 1.4 Blog layouts
+
+#### About me
+
+![About me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Category
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Contact me
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Create category
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Create entry
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Edit profile
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Home page
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+
+#### Signed In
+
+![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
