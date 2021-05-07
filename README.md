@@ -19,7 +19,7 @@ __I'M CURRENTLY WORKING ON THE README.md FILE__
 
 	1.[Triggers](#21-Triggers)
 
-	2.[Includes](#22-View)
+	2.[Includes](#22-Includes)
 
 1. [Contributor](#3-Contributor)
 
@@ -71,32 +71,49 @@ The 2nd schema show the tables thar are not related with each other in the datab
 
 #### About me
 
-![About me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __about me__ layout shows information about the site owner.
+
+![About me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/about_me_layout.png)
 
 #### Category
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __category__ layout is used to show all the entries from a particular category.
+
+![Category](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/category_layout.png)
 
 #### Contact me
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __contact me__ layout displays the contact information for the site owner.
+
+![Contact me](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/contact_me_layout.png)
 
 #### Create category
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __create category__ layout presents a form to create a category.
+
+![Create category](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/create_category_layout.png)
 
 #### Create entry
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __create entry__ layout presents a form to create an entry.
+
+
+![Create entry](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/create_entry_layout.png)
 
 #### Edit profile
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __edit profile__ layout shows a form to update the user's profile information.
+
+![Edit profile](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/edit_profile_layout.png)
 
 #### Home page
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+The __home page__ layouts displays the last 5 entries.
 
-#### Signed In
+![Home page](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/home_page_layout.png)
 
-![02 schema](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/01_php_blog_project_db_schema_02.png)
+#### Signed in
+
+The __signed in__ layout is the first page a user gets once is signed in.
+
+![Signed In](https://raw.githubusercontent.com/davidlozada-dev/01_php_blog_project/master/assets/img/signed_in_layout.png)
