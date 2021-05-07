@@ -2,7 +2,6 @@
 
 __Project's status: *finished*__ :heavy_check_mark:
 
-__I'M CURRENTLY WORKING ON THE README.md FILE__
 ## Index
 
 1. [Introduction](#1-Introduction)
